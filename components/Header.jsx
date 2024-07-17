@@ -11,20 +11,20 @@ const Header = () => {
         {/*logo*/}
         <Link href="/">
           <h1 className="text-4xl font-semibold">
-          Sharan<span className="text-accent">.</span>
+            Sharan <span className="text-accent">&lt;./ &gt;</span>
           </h1>
         </Link>
-        
+
         {/**Desktop nav  & hire me button*/}
         <div className="hidden xl:flex items-center gap-8">
-        <Nav />
+          <Nav />
           <Link href="/contact">
             <Button>Hire me</Button>
           </Link>
-          </div>
+        </div>
 
         {/**mobile nav */}
-        <div className= "xl:hidden">mobile nav</div>
+        <div className="xl:hidden">mobile nav</div>
       </div>
     </header>
   );
