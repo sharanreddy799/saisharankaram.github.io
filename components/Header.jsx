@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 
 //components
 import Nav from "./Nav";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
   return (
@@ -10,8 +11,8 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/*logo*/}
         <Link href="/">
-          <h1 className="text-4xl font-semibold">
-            Sharan <span className="text-accent">&lt;./ &gt;</span>
+          <h1 className="text-4xl font-bold">
+            Sharan <span className="text-accent text-2xl">&lt; /.&gt;</span>
           </h1>
         </Link>
 
@@ -24,7 +25,9 @@ const Header = () => {
         </div>
 
         {/**mobile nav */}
-        <div className="xl:hidden">mobile nav</div>
+        <div className="xl:hidden">
+          <MobileNav />
+        </div>
       </div>
     </header>
   );
