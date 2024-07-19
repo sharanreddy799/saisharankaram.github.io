@@ -20,9 +20,9 @@ import {
 //About me
 const about = {
   title: "About me",
-  description: "About me ",
+  description: "",
   info: [
-    { fieldName: "Name", fieldValue: "Sharan Karam" },
+    { fieldName: "Name", fieldValue: "SaiSharan Karam" },
     { fieldName: "Phone", fieldValue: "+1(334)-372-0616" },
     { fieldName: "Experience", fieldValue: "4+ years" },
     { fieldName: "Nationality", fieldValue: "Indian" },
@@ -36,7 +36,7 @@ const about = {
 const experience = {
   icon: "",
   title: "My experience",
-  description: "Experience Description ",
+  description: "Professional Experience",
   items: [
     {
       company: "Infor",
@@ -54,7 +54,7 @@ const experience = {
 const education = {
   icon: "",
   title: "My Education",
-  description: "About me",
+  description: "",
   items: [
     {
       institution: "Troy University",
@@ -72,7 +72,7 @@ const education = {
 const publication = {
   icon: "",
   title: "My Publications",
-  description: "About me",
+  description: "Advanced Database Systems",
   items: [
     {
       publication_name: "Springer",
