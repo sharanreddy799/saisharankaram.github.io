@@ -85,7 +85,7 @@ const publication = {
 //skills data
 const skills = {
   title: "My Skills",
-  description: "About me",
+  description: "",
   skillList: [
     { icon: <FaPython />, name: "Python" },
     { icon: <FaJava />, name: "J2EE" },
