@@ -14,11 +14,19 @@ import {
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
 const info = [
-  { icon: <FaPhoneAlt />, title: "Phone", description: "" },
+  { icon: <FaPhoneAlt />, title: "Phone", description: "XXX-372-XX16" },
 
-  { icon: <FaEnvelope />, title: "Email", description: "youremail@email.com" },
+  {
+    icon: <FaEnvelope />,
+    title: "Email",
+    description: "saisharank2008@email.com",
+  },
 
-  { icon: <FaMapMarkedAlt />, title: "Address", description: "" },
+  {
+    icon: <FaMapMarkedAlt />,
+    title: "Address",
+    description: "Murfreesboro,TN",
+  },
 ];
 
 import { easeIn, motion } from "framer-motion";
