@@ -9,6 +9,7 @@ import {
   FaJs,
 } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
+import { useState } from "react";
 import Link from "next/link";
 import {
   SiMicrosoftazure,
@@ -42,11 +43,15 @@ const experience = {
       company: "Infor",
       position: "Software Engineer (Java & Data)",
       duration: "2019 - 2022",
+      details:
+        "At Infor Pvt Ltd, I developed and maintained scalable microservices using Core Java and Spring Boot, improving system uptime by 15%. I engineered and deployed RESTful APIs for the ION middleware, enhancing data exchange efficiency by 30%. I led the migration of the ION OneView platform from AWS to Azure, optimizing performance and cost efficiency. I implemented CI/CD automation with Jenkins, reducing deployment time by 30%, and developed NoSQL queries in Elasticsearch to improve data retrieval speed and accuracy. Additionally, I authored unit and functional tests using JUnit and JSUnit to ensure comprehensive test coverage and mentored junior team members, fostering a collaborative team environment.",
     },
     {
       company: "Defence R&D Organization (India)",
       position: "Intern",
       duration: "2016 - 2017",
+      details:
+        "During my internship at the Defence Research & Development Organisation (DRDO), I developed a Java-based data transmission application for secure military communications, focusing on optimizing networking and data stream processes. I cataloged thousands of devices within an IP network, designing an XML storage solution and generating CSV format outputs to efficiently manage and review the devices on the network.",
     },
   ],
 };
@@ -115,6 +120,10 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 const Resume = () => {
+  const [selectedExperience, setSelectedExperience] = useState(null);
+  const handTabchange = (value) => {
+    setSelectedExperience(null);
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -122,12 +131,13 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 1.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      className="min-h-[80vh] flex flex-col items-center  justify-center py-12 xl:py-0"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto ">
         <Tabs
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px]"
+          onValueChange={handTabchange}
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -137,9 +147,9 @@ const Resume = () => {
             <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
           {/**content */}
-          <div className="min-h-[70vh] w-full">
+          <div className=" w-full">
             {/**experience */}
-            <TabsContent value="experience" className="w-full">
+            <TabsContent value="experience" className="w-full ">
               <div className="flex flex-col  gap-[30px] text-center xl:text-left xl:w-[35rem]">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
@@ -151,7 +161,8 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[250px] w-110 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] h-[250px] w-110 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 hover:bg-accent-hover/10 cursor-pointer"
+                          onClick={() => setSelectedExperience(index)}
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -267,7 +278,6 @@ const Resume = () => {
                 </ul>
               </div>
             </TabsContent>
-
             {/**About me*/}
             <TabsContent
               value="about"
@@ -295,6 +305,20 @@ const Resume = () => {
             </TabsContent>
           </div>
         </Tabs>
+        <div className="w-full  ">
+          {" "}
+          {selectedExperience !== null && (
+            <div className="mt-6 p-6 bg-[#2d2d34] rounded-xl items-center justify-center  ">
+              <h4 className="text-2xl font-bold">
+                {experience.items[selectedExperience].position} at{" "}
+                {experience.items[selectedExperience].company}
+              </h4>
+              <p className="text-white/60 mt-2">
+                {experience.items[selectedExperience].details}
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </motion.div>
   );

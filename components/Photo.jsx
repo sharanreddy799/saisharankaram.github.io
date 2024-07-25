@@ -24,12 +24,12 @@ const Photo = () => {
         >
           <Image
             src="/assets/photo.png"
-            priority
             quality={100}
             height={512}
             width={512}
             alt="photo"
             className="object-contain"
+            loading="lazy"
           />
         </motion.div>
 
