@@ -48,14 +48,16 @@ const education = {
   items: [
     {
       institution: "Troy University",
-      degree: "Masters Degree (Network and Internet Security)",
+      degree: "Master's Degree",
+      concentration: "(Network and Internet Security)",
       duration: "Aug'22 - May'24",
       Majors:
         "ADV ARTIFICIAL INTELLIGENCE, ANALYSIS OF ALGORITHMS, ADVANCED COMPUTER NETWORK,  ADVANCED DATABASE CONCEPTS",
     },
     {
       institution: "Osmania University",
-      degree: "Bachelor Degree (Computer and Information Science)",
+      degree: "Bachelor's Degree",
+      concentration: "(Computer and Information Science)",
       duration: "Aug'15 - May'19",
       Majors:
         "DATA STRUCTURES AND ALGORITHMS, WEB TECHNOLOGIES, CLOUD COMPUTING, DISTRIBUTED SYSTREMS",
@@ -152,15 +154,14 @@ const Resume = () => {
             <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
           {/**content */}
-          <div className=" w-full">
+          <div className=" w-full xl:h-[300px]">
             {/**experience */}
             <TabsContent value="experience" className="w-full ">
-              <div className="flex flex-col  gap-[10px] text-center xl:text-left xl:w-[35rem]">
+              <div className="flex flex-col  gap-[10px] text-center xl:h-[400px] xl:text-left xl:w-[35rem]">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
-
                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                   {experience.items.map((item, index) => {
                     return (
@@ -309,7 +310,7 @@ const Resume = () => {
         </Tabs>
         <div className="w-full mt-6 ">
           {selectedExperience !== null && (
-            <div className="mb-1  p-6 bg-[#232329] rounded-xl items-center justify-center  ">
+            <div className="mt-4  p-6 bg-[#232329] rounded-xl items-center justify-center  ">
               <h4 className="text-2xl font-bold">
                 {experience.items[selectedExperience].position} at{" "}
                 {experience.items[selectedExperience].company}
@@ -320,9 +321,10 @@ const Resume = () => {
             </div>
           )}
           {selectedEducation !== null && (
-            <div className="mt-6 p-6 bg-[#232329]  rounded-xl items-center justify-center  ">
+            <div className="mt-4 p-6 bg-[#232329]  rounded-xl items-center justify-center  ">
               <h4 className="text-2xl font-bold">
-                {education.items[selectedEducation].degree} at{" "}
+                {education.items[selectedEducation].degree} in{" "}
+                {selectedEducation.concentration}
                 {education.items[selectedEducation].institution}
               </h4>
               <p className="text-white/60 mt-2">
