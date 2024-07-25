@@ -323,8 +323,8 @@ const Resume = () => {
           {selectedEducation !== null && (
             <div className="mt-4 p-6 bg-[#232329]  rounded-xl items-center justify-center  ">
               <h4 className="text-2xl font-bold">
-                {education.items[selectedEducation].degree} in
-                {education.items[selectedEducation].concentration} at
+                {education.items[selectedEducation].degree} in{" "}
+                {education.items[selectedEducation].concentration} at{" "}
                 {education.items[selectedEducation].institution}
               </h4>
               <p className="text-white/60 mt-2">
