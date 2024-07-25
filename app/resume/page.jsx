@@ -1,23 +1,8 @@
 "use client";
-import {
-  FaJava,
-  FaReact,
-  FaPython,
-  FaGit,
-  FaJenkins,
-  FaAws,
-  FaJs,
-} from "react-icons/fa";
-import { RiNextjsFill } from "react-icons/ri";
+
 import { useState } from "react";
 import Link from "next/link";
-import {
-  SiMicrosoftazure,
-  SiGooglecloud,
-  SiTailwindcss,
-  SiElasticsearch,
-  SiSpringboot,
-} from "react-icons/si";
+
 //About me
 const about = {
   title: "About me",
@@ -65,11 +50,15 @@ const education = {
       institution: "Troy University",
       degree: "Masters Degree (Network and Internet Security)",
       duration: "Aug'22 - May'24",
+      Majors:
+        "ADV ARTIFICIAL INTELLIGENCE, ANALYSIS OF ALGORITHMS, ADVANCED COMPUTER NETWORK,  ADVANCED DATABASE CONCEPTS",
     },
     {
       institution: "Osmania University",
       degree: "Bachelor Degree (Computer and Information Science)",
       duration: "Aug'15 - May'19",
+      Majors:
+        "DATA STRUCTURES AND ALGORITHMS, WEB TECHNOLOGIES, CLOUD COMPUTING, DISTRIBUTED SYSTREMS",
     },
   ],
 };
@@ -90,23 +79,36 @@ const publication = {
 //skills data
 const skills = {
   title: "My Skills",
-  description: "",
-  skillList: [
-    { icon: <FaPython />, name: "Python" },
-    { icon: <FaJava />, name: "J2EE" },
-    { icon: <SiSpringboot />, name: "Spring" },
-    { icon: <FaAws />, name: "AWS" },
-    { icon: <SiMicrosoftazure />, name: "Azure" },
-    { icon: <SiGooglecloud />, name: "Google" },
-
-    { icon: <FaJs />, name: "Java Script" },
-    { icon: <RiNextjsFill />, name: "NextJs" },
-    { icon: <FaReact />, name: "ReactJs" },
-    { icon: <SiTailwindcss />, name: "tailwind.css" },
-    { icon: <SiElasticsearch />, name: "elastic" },
-
-    { icon: <FaGit />, name: "Git cli" },
-    { icon: <FaJenkins />, name: "CI/CD" },
+  items: [
+    { title: "Languages: ", list: "Java 11, Python, SQL, JavaScript, C++, C#" },
+    {
+      title: "Frameworks: ",
+      list: "Spring Boot, REST, Microservices, RabbitMQ, NodeJS, Express, Linux, Docker, Kubernetes, ReactJS, TailwindCSS, Angular, Next.js, CNN, Flask",
+    },
+    {
+      title: "WebTechnologies: ",
+      list: "CSS, HTML5, XML, JSON, Ajax, GraphQL",
+    },
+    {
+      title: "Databases: ",
+      list: "MySQL, Oracle, PostgreSQL, PL/SQL, Apache Kafka, Elasticsearch, OpenSearch",
+    },
+    {
+      title: "Cloudplatforms: ",
+      list: "AWS (EC2, S3, SQS, RDS), Google Cloud Platform, Microsoft Azure (Service Bus)",
+    },
+    {
+      title: "DevelopmentTools: ",
+      list: "SVN, Git, Jenkins, Gradle, Maven, Postman, Jira, Confluence, VSCode",
+    },
+    {
+      title: "TestingFrameworks: ",
+      list: "JUnit, JSUnit, Selenium, Test driven development",
+    },
+    {
+      title: "SoftSkills",
+      list: " Event-driven architecture, Linux Server, Performance Tuning, organizational skills, attention to detail, Agile, multi-tasking, effective prioritization",
+    },
   ],
 };
 
@@ -121,9 +123,12 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 const Resume = () => {
   const [selectedExperience, setSelectedExperience] = useState(null);
-  const handTabchange = (value) => {
+  const [selectedEducation, setSeletedEducation] = useState(null);
+  const handleTabchange = (value) => {
     setSelectedExperience(null);
+    setSeletedEducation(null);
   };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -131,13 +136,13 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 1.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="xl:mt-[10%] flex flex-col items-center  justify-center py-12 xl:py-0"
+      className="xl:mt-[5%] flex flex-col items-center  justify-center py-12 xl:py-0"
     >
       <div className="container mx-auto ">
         <Tabs
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px]"
-          onValueChange={handTabchange}
+          onValueChange={handleTabchange}
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -186,13 +191,14 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
-                <ScrollArea className="h-[400px]">
+                <ScrollArea className="h-[500px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {education.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-full  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] h-full  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1  hover:bg-accent-hover/10 cursor-pointer"
+                          onClick={() => setSeletedEducation(index)}
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -248,34 +254,31 @@ const Resume = () => {
               </div>
             </TabsContent>
             {/**skills */}
-            <TabsContent value="skills" className="w-full">
-              <div className="flex flex-col  gap-[30px] text-center xl:text-left xl:w-[35rem]">
-                <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                    {skills.description}
-                  </p>
-                </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.skillList.map((skill, index) => {
-                    return (
-                      <li key={index}>
-                        <TooltipProvider delayDuration={100}>
-                          <Tooltip>
-                            <TooltipTrigger className="w-full h-[120px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                                {skill.icon}
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="capitalize">{skill.name}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </li>
-                    );
-                  })}
-                </ul>
+            <TabsContent
+              value="skills"
+              className="w-full text-center xl:text-left"
+            >
+              <div className="flex flex-col gap-[30px] xl:w-[35rem]">
+                <h3 className="text-4xl font-bold">{skills.title}</h3>
+                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-8">
+                  {about.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className=" flex flex-col gap-3 max-w-[620px] mx-auto xl:mx-0">
+                    {skills.items.map((item, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="bg-[#232329] w-110 py-2 px-5 rounded-xl flex-col justify-center items-center lg:items-start gap-4"
+                        >
+                          {" "}
+                          <span className="text-white/60">{item.title}</span>
+                          <span className="text-sm">{item.list}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
             {/**About me*/}
@@ -306,7 +309,6 @@ const Resume = () => {
           </div>
         </Tabs>
         <div className="w-full  ">
-          {" "}
           {selectedExperience !== null && (
             <div className="mt-6 p-6 bg-[#2d2d34] rounded-xl items-center justify-center  ">
               <h4 className="text-2xl font-bold">
@@ -315,6 +317,17 @@ const Resume = () => {
               </h4>
               <p className="text-white/60 mt-2">
                 {experience.items[selectedExperience].details}
+              </p>
+            </div>
+          )}
+          {selectedEducation !== null && (
+            <div className="mt-6 p-6 bg-[#2d2d34] rounded-xl items-center justify-center  ">
+              <h4 className="text-2xl font-bold">
+                {education.items[selectedEducation].degree} at{" "}
+                {education.items[selectedEducation].institution}
+              </h4>
+              <p className="text-white/60 mt-2">
+                {education.items[selectedEducation].Majors}
               </p>
             </div>
           )}
