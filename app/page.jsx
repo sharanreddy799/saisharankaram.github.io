@@ -16,8 +16,10 @@ const Home = () => {
               <br /> <span className="text-accent">Sai Sharan Karam</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I am a full Stack Software Engineer with expertise in Java,
-              Springboot and Passion for NextJs development and deployments.
+              I am a Software Engineer with expertise in backend development and
+              cloud migrations, specializing in Java, Python, and SQL. I excel
+              in creating high-performance systems and solving complex data
+              challenges.
             </p>
             {/**Buttons and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">

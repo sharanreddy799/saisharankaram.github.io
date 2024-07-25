@@ -155,33 +155,32 @@ const Resume = () => {
           <div className=" w-full">
             {/**experience */}
             <TabsContent value="experience" className="w-full ">
-              <div className="flex flex-col  gap-[30px] text-center xl:text-left xl:w-[35rem]">
+              <div className="flex flex-col  gap-[10px] text-center xl:text-left xl:w-[35rem]">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                    {experience.items.map((item, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className="bg-[#232329] h-[250px] w-110 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 hover:bg-accent-hover/10 cursor-pointer"
-                          onClick={() => setSelectedExperience(index)}
-                        >
-                          <span className="text-accent">{item.duration}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                            {item.position}
-                          </h3>
-                          <div className="flex items-center gap-3">
-                            <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60">{item.company}</p>
-                          </div>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </ScrollArea>
+
+                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                  {experience.items.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="bg-[#232329] h-[200px] w-110 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 hover:bg-accent-hover/10 cursor-pointer"
+                        onClick={() => setSelectedExperience(index)}
+                      >
+                        <span className="text-accent">{item.duration}</span>
+                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          {item.position}
+                        </h3>
+                        <div className="flex items-center gap-3">
+                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                          <p className="text-white/60">{item.company}</p>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </TabsContent>
             {/**education */}
@@ -263,7 +262,7 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-8">
                   {about.description}
                 </p>
-                <ScrollArea className="h-[400px]">
+                <ScrollArea className="h-[400px]]">
                   <ul className=" flex flex-col gap-3 max-w-[620px] mx-auto xl:mx-0">
                     {skills.items.map((item, index) => {
                       return (
@@ -308,9 +307,9 @@ const Resume = () => {
             </TabsContent>
           </div>
         </Tabs>
-        <div className="w-full  ">
+        <div className="w-full mt-6 ">
           {selectedExperience !== null && (
-            <div className="mt-6 p-6 bg-[#2d2d34] rounded-xl items-center justify-center  ">
+            <div className="mb-1  p-6 bg-[#232329] rounded-xl items-center justify-center  ">
               <h4 className="text-2xl font-bold">
                 {experience.items[selectedExperience].position} at{" "}
                 {experience.items[selectedExperience].company}
@@ -321,7 +320,7 @@ const Resume = () => {
             </div>
           )}
           {selectedEducation !== null && (
-            <div className="mt-6 p-6 bg-[#2d2d34] rounded-xl items-center justify-center  ">
+            <div className="mt-6 p-6 bg-[#232329]  rounded-xl items-center justify-center  ">
               <h4 className="text-2xl font-bold">
                 {education.items[selectedEducation].degree} at{" "}
                 {education.items[selectedEducation].institution}
