@@ -16,8 +16,8 @@ const Home = () => {
               <br /> <span className="text-accent">Sai Sharan Karam</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I am a Software Engineer with expertise in backend development and
-              cloud migrations, specializing in Java, Python, and SQL. I excel
+              I am a Senior Software Engineer with expertise in full stack development and
+              cloud migrations, specializing in Java, Python, JS frameworks and SQL. I excel
               in creating high-performance systems and solving complex data
               challenges.
             </p>
