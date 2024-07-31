@@ -115,12 +115,6 @@ const skills = {
 };
 
 import { TabsContent, Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 const Resume = () => {
@@ -138,7 +132,7 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 1.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="xl:mt-[5%] flex flex-col items-center  justify-center py-12 xl:py-0"
+      className="xl:mt-[5%] flex flex-col items-center  justify-center py-12 xl:pb-64px"
     >
       <div className="container mx-auto ">
         <Tabs
@@ -154,7 +148,7 @@ const Resume = () => {
             <TabsTrigger value="about">About Me</TabsTrigger>
           </TabsList>
           {/**content */}
-          <div className=" w-full xl:h-[300px]">
+          <div className=" w-full xl:h-[300px] lg:h-[300px]">
             {/**experience */}
             <TabsContent value="experience" className="w-full ">
               <div className="flex flex-col  gap-[10px] text-center xl:h-[400px] xl:text-left xl:w-[35rem]">
