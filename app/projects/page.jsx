@@ -74,7 +74,7 @@ const projects = [
   {
     nums: "03",
     category: "Personal Portifolio",
-    title: "Sharan.io",
+    title: "SaiSharanKaram.io",
     link: "https://github.com/sharanreddy799/saisharankaram.github.io",
     description:
       "A personal portifolio page, built from scratch using NextJs and hosted on Vercel. It was my first front end project which was ",
@@ -117,7 +117,7 @@ const Projects = () => {
     >
       <div className="container mx-auto">
         <Tabs
-          defaultValue="experience"
+          defaultValue="01"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[300px] mx-auto xl:mx-0 gap-6">
@@ -140,11 +140,11 @@ const Projects = () => {
                   link
                 </Link>
 
-                <ul className="xl:flex flex-row grid grid-cols-4 gap-[20px] xl:none">
+                <ul className=" grid grid-cols-5 gap-[25px] pb-100px  xl:flex flex-row">
                   {project.stack.map((tech, index) => {
                     return (
                       <li className="" key={index}>
-                        <div className="text-[28px]">
+                        <div className="text-[28px] text-accent">
                           {techIcons[tech] || tech}
                         </div>
                       </li>
