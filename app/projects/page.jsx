@@ -77,7 +77,7 @@ const projects = [
     title: "sharan.io",
     link: "https://github.com/sharanreddy799/saisharankaram.github.io",
     description:
-      "A personal portifolio page, built from scratch using NextJs and hosted on Vercel. It was my first front end project which was ",
+      "A personal portifolio page, built from scratch using NextJs & TailwindCss hosted on Vercel. It was my first front end project in my learning curve of React & JavaScript",
     stack: ["React", "NextJs", "HTML", "TailwindCss", "vercel"],
   },
 ];
