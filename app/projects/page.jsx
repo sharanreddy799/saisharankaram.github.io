@@ -74,7 +74,7 @@ const projects = [
   {
     nums: "03",
     category: "Personal Portifolio",
-    title: "SaiSharanKaram.io",
+    title: "sharan.io",
     link: "https://github.com/sharanreddy799/saisharankaram.github.io",
     description:
       "A personal portifolio page, built from scratch using NextJs and hosted on Vercel. It was my first front end project which was ",
