@@ -25,7 +25,7 @@ const info = [
   {
     icon: <FaMapMarkedAlt />,
     title: "Address",
-    description: "Murfreesboro,TN",
+    description: "Nashville,TN",
   },
 ];
 
