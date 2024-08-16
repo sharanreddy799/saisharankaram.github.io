@@ -85,7 +85,7 @@ const skills = {
     { title: "Languages: ", list: "Java 11, Python, SQL, JavaScript, C++, C#" },
     {
       title: "Frameworks: ",
-      list: "Spring Boot, REST, Microservices, RabbitMQ, NodeJS, Express, Linux, Docker, Kubernetes, ReactJS, TailwindCSS, Angular, Next.js, CNN, Flask",
+      list: "Spring Boot, REST, Microservices, FastApi, RabbitMQ, NodeJS, Express, Linux, Docker, Kubernetes, ReactJS, TailwindCSS, Angular, Next.js, CNN, Flask",
     },
     {
       title: "WebTechnologies: ",
@@ -162,7 +162,7 @@ const Resume = () => {
                       <li
                         key={index}
                         className="bg-[#232329] h-[200px] w-110 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 xl:hover:bg-accent-hover/10 cursor-pointer"
-                        onClick={() => setSelectedExperience(index)}
+                        ##onClick={() => setSelectedExperience(index)}
                       >
                         <span className="text-accent">{item.duration}</span>
                         <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
