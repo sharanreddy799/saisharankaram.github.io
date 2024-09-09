@@ -107,56 +107,53 @@ const techIcons = {
 };
 const Projects = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 1.4, duration: 0.4, ease: "easeIn" },
-      }}
-      className="xl:mt-[5%] flex flex-col items-center  justify-center py-12 xl:py-0 mx-auto"
-    >
-      <div className="container mx-auto">
-        <Tabs
-          defaultValue="01"
-          className="flex flex-col xl:flex-row gap-[60px]"
-        >
-          <TabsList className="flex flex-col w-full max-w-[300px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="01">CelebeLikeMe</TabsTrigger>
-            <TabsTrigger value="02">Online Learning Management</TabsTrigger>
-            <TabsTrigger value="03">Personal Portifolio</TabsTrigger>
-          </TabsList>
-          {projects.map((project) => (
-            <TabsContent
-              key={project.nums}
-              value={project.nums}
-              className="w-full"
-            >
-              <div className="flex flex-col text-center xl:text-left xl:w-[35rem] bg-[#232329] h-full  py-6 px-8 rounded-xl justify-center items-center xl:items-start gap-8  cursor-pointer">
-                <h3 className="text-4xl font-bold">{project.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                  {project.description}
-                </p>
-                <Link href={project.link} className="text-blue-700">
-                  link
-                </Link>
+    // <motion.div
+    //   initial={{ opacity: 0 }}
+    //   animate={{
+    //     opacity: 1,
+    //     transition: { delay: 1.4, duration: 0.4, ease: "easeIn" },
+    //   }}
+    //   className="xl:mt-[5%] flex flex-col items-center  justify-center py-12 xl:py-0 mx-auto"
+    // >
+    <div className="container mx-auto">
+      <Tabs defaultValue="01" className="flex flex-col xl:flex-row gap-[60px]">
+        <TabsList className="flex flex-col w-full max-w-[300px] mx-auto xl:mx-0 gap-6">
+          <TabsTrigger value="01">CelebeLikeMe</TabsTrigger>
+          <TabsTrigger value="02">Online Learning Management</TabsTrigger>
+          <TabsTrigger value="03">Personal Portifolio</TabsTrigger>
+        </TabsList>
+        {projects.map((project) => (
+          <TabsContent
+            key={project.nums}
+            value={project.nums}
+            className="w-full"
+          >
+            <div className="flex flex-col text-center xl:text-left xl:w-[35rem] bg-[#232329] h-full  py-6 px-8 rounded-xl justify-center items-center xl:items-start gap-8  cursor-pointer">
+              <h3 className="text-4xl font-bold">{project.title}</h3>
+              <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                {project.description}
+              </p>
+              <Link href={project.link} className="text-blue-700">
+                link
+              </Link>
 
-                <ul className=" grid grid-cols-5 gap-[25px] pb-100px  xl:flex flex-row">
-                  {project.stack.map((tech, index) => {
-                    return (
-                      <li className="" key={index}>
-                        <div className="text-[28px] text-accent">
-                          {techIcons[tech] || tech}
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
-      </div>
-    </motion.div>
+              <ul className=" grid grid-cols-5 gap-[25px] pb-100px  xl:flex flex-row">
+                {project.stack.map((tech, index) => {
+                  return (
+                    <li className="" key={index}>
+                      <div className="text-[28px] text-accent">
+                        {techIcons[tech] || tech}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </TabsContent>
+        ))}
+      </Tabs>
+    </div>
+    // </motion.div>
   );
 };
 
