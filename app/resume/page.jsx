@@ -1,7 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+
+import { TabsContent, Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 //About me
 const about = {
@@ -146,17 +149,19 @@ const skills = {
   ],
 };
 
-import { TabsContent, Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { motion } from "framer-motion";
 const Resume = () => {
   const [selectedExperience, setSelectedExperience] = useState(null);
   const [selectedEducation, setSeletedEducation] = useState(null);
+  const sectionRef = useRef(null);
   const handleTabchange = (value) => {
     setSelectedExperience(null);
     setSeletedEducation(null);
   };
-
+  useEffect(() => {
+    if (selectedExperience !== null) {
+      sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectedExperience]);
   return (
     // <motion.div
     //   initial={{ opacity: 0 }}
@@ -193,7 +198,7 @@ const Resume = () => {
                   return (
                     <li
                       key={index}
-                      className="bg-[#232329] h-[200px] xl:h-[60px] w-110 py-4 px-10 rounded-xl flex flex-col xl:flex-row justify-center  items-center xl:gap-8 lg:items-start gap-1 xl:hover:bg-accent-hover/10 cursor-pointer"
+                      className="bg-[#232329] h-[200px] xl:h-[60px] w-110 py-4 px-10 rounded-xl flex flex-col xl:flex-row justify-center items-center xl:gap-8 lg:items-start gap-1 hover:bg-accent-hover/10 cursor-pointer"
                       onClick={() => setSelectedExperience(index)}
                     >
                       {/* class="bg-[#232329] h-[200px] xl:h-[80px] w-110 py-4 px-10 rounded-xl flex flex-col xl:flex-row justify-center items-center gap-1 xl:hover:bg-accent-hover/10 cursor-pointer">
@@ -226,7 +231,7 @@ const Resume = () => {
                     return (
                       <li
                         key={index}
-                        className="bg-[#232329] h-full  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1  xl:hover:bg-accent-hover/10 cursor-pointer"
+                        className="bg-[#232329] h-full  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1  hover:bg-accent-hover/10 cursor-pointer"
                         onClick={() => setSeletedEducation(index)}
                       >
                         <span className="text-accent">{item.duration}</span>
@@ -333,7 +338,7 @@ const Resume = () => {
           </TabsContent>
         </div>
       </Tabs>
-      <div className="w-full mb-[25px] mt-6 ">
+      <div ref={sectionRef} className="w-full mb-[25px] mt-6 ">
         {selectedExperience !== null && (
           <div className="mt-1 p-4 bg-[#232329] rounded-xl items-center justify-center">
             <h4 className="text-2xl font-bold">
