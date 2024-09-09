@@ -26,23 +26,50 @@ const experience = {
   items: [
     {
       company: "FreeLancing",
-      position: "Software Engineer",
+      position: "Client Projects",
       duration: "2022 - 2024",
-      details: "",
+      details2: [
+        {
+          jobTitle: "JAVA COBOL Parser",
+          description: [
+            "Created a Java Spring Boot application, designed as a Portability as a Service, whose main objective was to retrieve a COBOL object from the database, create an extracted JSON payload, and send it to a AWS queues",
+          ],
+        },
+        {
+          jobTitle: "Database Administrator",
+          description: [
+            "As a Database Administrator, I specialized in nighttime oversight of database systems, effectively managing and resolving Informatica job and Oracle database failures. My role was crucial in ensuring system stability and data integrity by promptly diagnosing and addressing performance bottlenecks and system outages, thereby maintaining continuous operational excellence.",
+          ],
+        },
+      ],
     },
     {
       company: "Infor Pvt",
       position: "Software Engineer",
       duration: "2019 - 2022",
-      details:
-        "At Infor Pvt Ltd, I developed and maintained scalable microservices using Core Java and Spring Boot, improving system uptime by 15%. I engineered and deployed RESTful APIs for the ION middleware, enhancing data exchange efficiency by 30%. I led the migration of the ION OneView platform from AWS to Azure, optimizing performance and cost efficiency. I implemented CI/CD automation with Jenkins, reducing deployment time by 30%, and developed NoSQL queries in Elasticsearch to improve data retrieval speed and accuracy. Additionally, I authored unit and functional tests using JUnit and JSUnit to ensure comprehensive test coverage and mentored junior team members, fostering a collaborative team environment.",
+      details: "",
+      details2: [
+        {
+          jobTitle: "Software Engineer",
+          description: [
+            " I led the development of critical microservices using Core Java and Spring Boot for the Infor ION OneView platform, which enhanced business process visibility and monitoring. My role involved architecting and optimizing a multi-threaded microservices architecture, leading to a 25% increase in system uptime and a 20% reduction in response times. I successfully integrated complex messaging solutions with RabbitMQ and Google Pub/Sub, increasing throughput by 30%, and played a key role in refining Agile processes, which boosted feature delivery timelines by 20%. Additionally, I mentored junior developers and enhanced the CI/CD pipeline using Jenkins and Git, streamlining deployment processes and ensuring reliable releases.",
+          ],
+        },
+      ],
     },
     {
       company: "Defence R&D Org (India)",
       position: "Intern",
       duration: "2016 - 2017",
-      details:
-        "During my internship at the Defence Research & Development Organisation (DRDO), I developed a Java-based data transmission application for secure military communications, focusing on optimizing networking and data stream processes. I cataloged thousands of devices within an IP network, designing an XML storage solution and generating CSV format outputs to efficiently manage and review the devices on the network.",
+      details: "",
+      details2: [
+        {
+          jobTitle: "Intern",
+          description: [
+            "Developed a Java-based data transmission application for secure military communications, focusing on optimizing networking and data streams to enhance data transmission speeds by 20%.Managed comprehensive network device monitoring by automating the listing and storage of thousands of devices in an IP network, reducing manual processing time by 50% and improving overall network management efficiency.",
+          ],
+        },
+      ],
     },
   ],
 };
@@ -256,7 +283,7 @@ const Resume = () => {
             value="skills"
             className="w-full text-center xl:text-left"
           >
-            <div className="flex flex-col gap-[10px] xl:w-[35rem]">
+            <div className="flex pb-3 flex-col gap-[10px] xl:w-[35rem]">
               <h3 className="text-4xl font-bold">{skills.title}</h3>
               <p className="max-w-[600px] text-white/60 mx-auto mt-0 xl:mx-8">
                 {about.description}
@@ -306,20 +333,31 @@ const Resume = () => {
           </TabsContent>
         </div>
       </Tabs>
-      <div className="w-full mt-6 ">
+      <div className="w-full mb-[25px] mt-6 ">
         {selectedExperience !== null && (
-          <div className="mt-4  p-6 bg-[#232329] rounded-xl items-center justify-center  ">
+          <div className="mt-1 p-4 bg-[#232329] rounded-xl items-center justify-center">
             <h4 className="text-2xl font-bold">
-              {experience.items[selectedExperience].position} at{" "}
               {experience.items[selectedExperience].company}
             </h4>
-            <p className="text-white/60 mt-2">
-              {experience.items[selectedExperience].details}
-            </p>
+            <ul className="text-white/60 mt-2 list-disc pl-5">
+              {experience.items[selectedExperience].details2.map(
+                (detail, index) => (
+                  <li key={index}>
+                    <p className="text-accent">{detail.jobTitle}</p>
+                    {detail.description.map((desc, descIndex) => (
+                      <p key={descIndex}>
+                        <span className="w-2 h-2 rounded-full bg-accent flex-shrink-0"></span>
+                        {desc}
+                      </p>
+                    ))}
+                  </li>
+                )
+              )}
+            </ul>
           </div>
         )}
         {selectedEducation !== null && (
-          <div className="mt-4 p-6 bg-[#232329]  rounded-xl items-center justify-center  ">
+          <div className="mt-1 p-4 bg-[#232329]  rounded-xl items-center justify-center  ">
             <h4 className="text-2xl font-bold">
               {education.items[selectedEducation].degree} in{" "}
               {education.items[selectedEducation].concentration} at{" "}
