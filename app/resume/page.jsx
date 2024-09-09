@@ -25,14 +25,20 @@ const experience = {
   description: "Professional Experience",
   items: [
     {
-      company: "Infor",
-      position: "Software Engineer (Java & Data)",
+      company: "FreeLancing",
+      position: "Software Engineer",
+      duration: "2022 - 2024",
+      details: "",
+    },
+    {
+      company: "Infor Pvt",
+      position: "Software Engineer",
       duration: "2019 - 2022",
       details:
         "At Infor Pvt Ltd, I developed and maintained scalable microservices using Core Java and Spring Boot, improving system uptime by 15%. I engineered and deployed RESTful APIs for the ION middleware, enhancing data exchange efficiency by 30%. I led the migration of the ION OneView platform from AWS to Azure, optimizing performance and cost efficiency. I implemented CI/CD automation with Jenkins, reducing deployment time by 30%, and developed NoSQL queries in Elasticsearch to improve data retrieval speed and accuracy. Additionally, I authored unit and functional tests using JUnit and JSUnit to ensure comprehensive test coverage and mentored junior team members, fostering a collaborative team environment.",
     },
     {
-      company: "Defence R&D Organization (India)",
+      company: "Defence R&D Org (India)",
       position: "Intern",
       duration: "2016 - 2017",
       details:
@@ -42,7 +48,6 @@ const experience = {
 };
 //education data
 const education = {
-  icon: "",
   title: "My Education",
   description: "",
   items: [
@@ -156,21 +161,23 @@ const Resume = () => {
               <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                 {experience.description}
               </p>
-              <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+              <ul className="flex flex-col lg:grid-cols-2 gap-[30px]">
                 {experience.items.map((item, index) => {
                   return (
                     <li
                       key={index}
-                      className="bg-[#232329] h-[200px] w-110 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 xl:hover:bg-accent-hover/10 cursor-pointer"
+                      className="bg-[#232329] h-[200px] xl:h-[60px] w-110 py-4 px-10 rounded-xl flex flex-col xl:flex-row justify-center  items-center xl:gap-8 lg:items-start gap-1 xl:hover:bg-accent-hover/10 cursor-pointer"
+                      onClick={() => setSelectedExperience(index)}
                     >
-                      {" "}
+                      {/* class="bg-[#232329] h-[200px] xl:h-[80px] w-110 py-4 px-10 rounded-xl flex flex-col xl:flex-row justify-center items-center gap-1 xl:hover:bg-accent-hover/10 cursor-pointer">
+                       */}{" "}
                       {/**onClick={() => setSelectedExperience(index)}*/}
                       <span className="text-accent">{item.duration}</span>
                       <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                         {item.position}
                       </h3>
                       <div className="flex items-center gap-3">
-                        <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                        {/* <span className="w-[6px] h-[6px] rounded-full bg-accent"></span> */}
                         <p className="text-white/60">{item.company}</p>
                       </div>
                     </li>
