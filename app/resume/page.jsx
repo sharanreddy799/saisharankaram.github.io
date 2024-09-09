@@ -158,6 +158,11 @@ const Resume = () => {
       sectionRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   }, [selectedExperience]);
+  useEffect(() => {
+    if (selectedEducation !== null) {
+      sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [selectedEducation]);
   return (
     // <motion.div
     //   initial={{ opacity: 0 }}
@@ -178,7 +183,7 @@ const Resume = () => {
           <TabsTrigger value="education">Education</TabsTrigger>
           <TabsTrigger value="publication">Publication</TabsTrigger>
           <TabsTrigger value="skills">Skills</TabsTrigger>
-          <TabsTrigger value="about">About Me</TabsTrigger>
+          {/* <TabsTrigger value="about">About Me</TabsTrigger> */}
         </TabsList>
         {/**content */}
         <div className=" w-full xl:h-[300px] lg:h-[300px]">
@@ -221,13 +226,13 @@ const Resume = () => {
               <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                 {education.description}
               </p>
-              <ScrollArea className="h-[500px]">
+              <ScrollArea className="xl:h-[500px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                   {education.items.map((item, index) => {
                     return (
                       <li
                         key={index}
-                        className="bg-[#232329] h-full  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1  hover:bg-accent-hover/10 cursor-pointer"
+                        className="bg-[#232329]  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1  hover:bg-accent-hover/10 cursor-pointer"
                         onClick={() => setSeletedEducation(index)}
                       >
                         <span className="text-accent">{item.duration}</span>
@@ -334,9 +339,12 @@ const Resume = () => {
           </TabsContent>
         </div>
       </Tabs>
-      <div ref={sectionRef} className="w-full mb-[25px] mt-6 ">
+      <div className="w-full mb-[25px] mt-6 ">
         {selectedExperience !== null && (
-          <div className="mt-1 p-4 bg-[#232329] rounded-xl items-center justify-center">
+          <div
+            ref={sectionRef}
+            className="mt-1 p-4 bg-[#232329] rounded-xl items-center justify-center"
+          >
             <h4 className="text-2xl font-bold">
               {experience.items[selectedExperience].company}
             </h4>
@@ -358,7 +366,10 @@ const Resume = () => {
           </div>
         )}
         {selectedEducation !== null && (
-          <div className="mt-1 p-4 bg-[#232329]  rounded-xl items-center justify-center  ">
+          <div
+            ref={sectionRef}
+            className="mt-1 p-4 bg-[#232329]  rounded-xl items-center justify-center  "
+          >
             <h4 className="text-2xl font-bold">
               {education.items[selectedEducation].degree} in{" "}
               {education.items[selectedEducation].concentration} at{" "}
