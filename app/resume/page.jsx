@@ -120,15 +120,15 @@ const skills = {
     { title: "Languages: ", list: "Java 11, Python, SQL, JavaScript, C++, C#" },
     {
       title: "Frameworks: ",
-      list: "Spring Boot, REST, Microservices, FastApi, RabbitMQ, NodeJS, Express, Linux, Docker, Kubernetes, ReactJS, TailwindCSS, Angular, Next.js, CNN, Flask",
+      list: "Spring Boot, REST, Microservices, RabbitMQ, JUnit, Groovy, ReactJS, TailwindCSS, Angular, Next.js, NodeJS, Linux, Docker, TensorFlow, CNN",
     },
     {
       title: "WebTechnologies: ",
-      list: "CSS, HTML5, XML, JSON, Ajax, GraphQL",
+      list: "CSS, HTML5, XML, JSON",
     },
     {
       title: "Databases: ",
-      list: "MySQL, Oracle, PostgreSQL, PL/SQL, Apache Kafka, Elasticsearch, OpenSearch",
+      list: "MySQL, Oracle, PostgreSQL, PL/SQL, Apache Kafka, Elasticsearch",
     },
     {
       title: "Cloudplatforms: ",
@@ -136,15 +136,11 @@ const skills = {
     },
     {
       title: "DevelopmentTools: ",
-      list: "SVN, Git, Jenkins, Gradle, Maven, Postman, Jira, Confluence, VSCode",
+      list: "SVN, Git, Jenkins, Gradle, Maven, Postman, Jira, Confluence, VSCode, IntelliJ, Eclipse",
     },
     {
-      title: "TestingFrameworks: ",
-      list: "JUnit, JSUnit, Selenium, Test driven development",
-    },
-    {
-      title: "SoftSkills",
-      list: " Event-driven architecture, Linux Server, Performance Tuning, organizational skills, attention to detail, Agile, multi-tasking, effective prioritization",
+      title: "OtherSkills: ",
+      list: " Event-driven architecture, Service Oriented Architecture, Linux Server, Performance Tuning, organizational skills, attention to detail, Agile, multi-tasking, effective prioritization",
     },
   ],
 };
@@ -198,17 +194,17 @@ const Resume = () => {
                   return (
                     <li
                       key={index}
-                      className="bg-[#232329] h-[200px] xl:h-[60px] w-110 py-4 px-10 rounded-xl flex flex-col xl:flex-row justify-center items-center xl:gap-8 lg:items-start gap-1 hover:bg-accent-hover/10 cursor-pointer"
+                      className="bg-[#232329] h-[120px] xl:h-[60px] w-110 py-4 px-10 rounded-xl flex flex-col xl:flex-row justify-center items-center xl:gap-8 lg:items-start gap-1 hover:bg-accent-hover/10 cursor-pointer"
                       onClick={() => setSelectedExperience(index)}
                     >
                       {/* class="bg-[#232329] h-[200px] xl:h-[80px] w-110 py-4 px-10 rounded-xl flex flex-col xl:flex-row justify-center items-center gap-1 xl:hover:bg-accent-hover/10 cursor-pointer">
                        */}{" "}
                       {/**onClick={() => setSelectedExperience(index)}*/}
                       <span className="text-accent">{item.duration}</span>
-                      <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                      <h3 className="text-xl max-w-[260px] min-h-[30px] text-center lg:text-left">
                         {item.position}
                       </h3>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-1">
                         {/* <span className="w-[6px] h-[6px] rounded-full bg-accent"></span> */}
                         <p className="text-white/60">{item.company}</p>
                       </div>
@@ -235,7 +231,7 @@ const Resume = () => {
                         onClick={() => setSeletedEducation(index)}
                       >
                         <span className="text-accent">{item.duration}</span>
-                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                        <h3 className="text-xl max-w-[260px] min-h-[30px] text-center lg:text-left">
                           {item.degree}
                         </h3>
                         <div className="flex items-center gap-3">
