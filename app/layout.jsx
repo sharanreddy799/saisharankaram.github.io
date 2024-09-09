@@ -34,8 +34,9 @@ export default function RootLayout({ children }) {
         <Header />
         <SpeedInsights />
         <Analytics />
-        <StairTransition />
+
         <PageTransition>{children}</PageTransition>
+        {/* <div>{children}</div> <StairTransition /> <PageTransition>{children}</PageTransition>*/}
         <Footer />
       </body>
     </html>
