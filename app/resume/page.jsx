@@ -194,7 +194,7 @@ const Resume = () => {
               <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                 {experience.description}
               </p>
-              <ul className="flex flex-col lg:grid-cols-2 gap-[30px]">
+              <ul className="flex flex-col lg:grid-cols-2 gap-[10px]">
                 {experience.items.map((item, index) => {
                   return (
                     <li
@@ -343,7 +343,7 @@ const Resume = () => {
         {selectedExperience !== null && (
           <div
             ref={sectionRef}
-            className="mt-1 p-4 bg-[#232329] rounded-xl items-center justify-center"
+            className="mt-3 p-4 bg-[#232329] rounded-xl items-center justify-center"
           >
             <h4 className="text-2xl font-bold">
               {experience.items[selectedExperience].company}
