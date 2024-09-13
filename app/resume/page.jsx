@@ -232,7 +232,7 @@ const Resume = () => {
                     return (
                       <li
                         key={index}
-                        className="bg-[#232329]  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1  hover:bg-accent-hover/10 cursor-pointer"
+                        className="bg-[#232329] h-full py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1  hover:bg-accent-hover/10 cursor-pointer"
                         onClick={() => setSeletedEducation(index)}
                       >
                         <span className="text-accent">{item.duration}</span>
