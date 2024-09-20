@@ -124,7 +124,7 @@ const skills = {
     },
     {
       title: "WebTechnologies: ",
-      list: "CSS, HTML5, XML, JSON",
+      list: "Angular, ReactJs, NextJS, JQuery, CSS, HTML5, XML, JSON",
     },
     {
       title: "Databases: ",
