@@ -28,7 +28,7 @@ const experience = {
   description: "Professional Experience",
   items: [
     {
-      company: "FreeLancing",
+      company: "FreeLancer",
       position: "Client Projects",
       duration: "2022 - 2024",
       details2: [
@@ -117,7 +117,7 @@ const publication = {
 const skills = {
   title: "My Skills",
   items: [
-    { title: "Languages: ", list: "Java 11, Python, SQL, JavaScript, C++, C#" },
+    { title: "Languages: ", list: "Java 8&11, J2EE Python, SQL, JavaScript, C++" },
     {
       title: "Frameworks: ",
       list: "Spring Boot, REST, Microservices, RabbitMQ, JUnit, Groovy, ReactJS, TailwindCSS, Angular, Next.js, NodeJS, Linux, Docker, TensorFlow, CNN",
@@ -132,7 +132,7 @@ const skills = {
     },
     {
       title: "Cloudplatforms: ",
-      list: "AWS (EC2, S3, SQS, RDS), Google Cloud Platform, Microsoft Azure (Service Bus)",
+      list: "AWS (EC2, S3, SQS, RDS), Google Cloud Platform, Microsoft Azure (Service Bus, ClI)",
     },
     {
       title: "DevelopmentTools: ",
