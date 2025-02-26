@@ -28,20 +28,14 @@ const experience = {
   description: "Professional Experience",
   items: [
     {
-      company: "FreeLancer",
-      position: "Client Projects",
-      duration: "2022 - 2024",
+      company: "Capital One",
+      position: "Software Engineer",
+      duration: "2024 - present",
       details2: [
         {
-          jobTitle: "JAVA COBOL Parser",
+          jobTitle: "Software Engineer",
           description: [
-            "Created a Java Spring Boot application, designed as a Portability as a Service, whose main objective was to retrieve a COBOL object from the database, create an extracted JSON payload, and send it to a AWS queues",
-          ],
-        },
-        {
-          jobTitle: "Database Administrator",
-          description: [
-            "As a Database Administrator, I specialized in nighttime oversight of database systems, effectively managing and resolving Informatica job and Oracle database failures. My role was crucial in ensuring system stability and data integrity by promptly diagnosing and addressing performance bottlenecks and system outages, thereby maintaining continuous operational excellence.",
+            "Created a Java Spring Boot application, designed as a Portability as a Service, whose main objective was to retrieve a COBOL object from the database, create an extracted JSON payload, and execute Trigger in the MySQl database",
           ],
         },
       ],
@@ -117,7 +111,10 @@ const publication = {
 const skills = {
   title: "My Skills",
   items: [
-    { title: "Languages: ", list: "Java 8&11, J2EE Python, SQL, JavaScript, C++" },
+    {
+      title: "Languages: ",
+      list: "Java 8&11, J2EE Python, SQL, JavaScript, C++",
+    },
     {
       title: "Frameworks: ",
       list: "Spring Boot, REST, Microservices, RabbitMQ, JUnit, Groovy, ReactJS, TailwindCSS, Angular, Next.js, NodeJS, Linux, Docker, TensorFlow, CNN",
