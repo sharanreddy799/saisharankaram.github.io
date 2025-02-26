@@ -30,7 +30,7 @@ const experience = {
     {
       company: "Capital One",
       position: "Software Engineer",
-      duration: "2024 - present",
+      duration: "2024 - Now",
       details2: [
         {
           jobTitle: "Software Engineer",
@@ -186,7 +186,7 @@ const Resume = () => {
         <div className=" w-full xl:h-[300px] lg:h-[300px]">
           {/**experience */}
           <TabsContent value="experience" className="w-full ">
-            <div className="flex flex-col  gap-[10px] text-center xl:h-[400px] xl:text-left xl:w-[45rem]">
+            <div className="flex flex-col  gap-[10px] text-center xl:h-[400px] xl:text-left xl:w-[35rem]">
               <h3 className="text-4xl font-bold">{experience.title}</h3>
               <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                 {experience.description}
