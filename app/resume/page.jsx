@@ -112,6 +112,47 @@ const skills = {
   title: "My Skills",
   items: [
     {
+      title: "Programming Languages: ",
+      list: "Java 8&11, J2EE, Python, SQL, Gherkin, BASH, JavaScript, C++, C, ",
+    },
+    {
+      title: "Full Stack Development: ",
+      list: "React.js, Redux, Next.js, Angular, NodeJS, Flask, Spring Boot, Microservices, GraphQL, RESTful APIs, HTML, CSS, TailwindCSS, Bootstrap, JQuery, XML, JSON, Linux, Docker, TensorFlow, CNN",
+    },
+    {
+      title: "Problem Solving: ",
+      list: "Object-Oriented Programming (OOP), Test Driven Development (TDD), Behavior Driven Development (BDD), Data Structures, Distributed Systems, Design Patterns, SOLID Principles, Performance Tuning",
+    },
+    {
+      title: "Cloud & DevOps: ",
+      list: "AWS (EC2, S3, SQS, Lambda, IAM, RDS), Google Cloud Platform, Microsoft Azure (Service Bus, Blob Storage, CLI), Jenkins, Vercel, GitHub Actions, Gradle, Maven",
+    },
+    {
+      title: "System Architecture: ",
+      list: "Event-Driven Architecture, Service Oriented Architecture (SOA), Message Queues (Kafka, ActiveMQ), RabbitMQ",
+    },
+    {
+      title: "Security & Testing: ",
+      list: "OAuth, Selenium, JUnit, Karate, Cucumber, Postman",
+    },
+    {
+      title: "Databases: ",
+      list: "MySQL, Oracle, PostgreSQL, PL/SQL, MongoDB (NoSQL), Elasticsearch, Apache Kafka",
+    },
+    {
+      title: "Development Tools: ",
+      list: "SVN, Git, VSCode, IntelliJ, Eclipse, Jira, Confluence",
+    },
+    {
+      title: "Other Skills: ",
+      list: "Organizational skills, attention to detail, Agile, multi-tasking, effective prioritization, Linux Server",
+    },
+  ],
+};
+const skills2 = {
+  title: "My Skills",
+  items: [
+    {
       title: "Languages: ",
       list: "Java 8&11, J2EE Python, SQL, JavaScript, C++",
     },
