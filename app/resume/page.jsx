@@ -56,7 +56,7 @@ const experience = {
     },
     {
       company: "Defence R&D Org (India)",
-      position: "Intern",
+      position: "Devloper",
       duration: "2017 - 2018",
       details: "",
       details2: [
