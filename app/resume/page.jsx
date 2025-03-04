@@ -28,7 +28,7 @@ const experience = {
   description: "Professional Experience",
   items: [
     {
-      company: "Wedigma One",
+      company: "Wedigma",
       position: "Software Developer",
       duration: "2023 - 2024",
       details2: [
