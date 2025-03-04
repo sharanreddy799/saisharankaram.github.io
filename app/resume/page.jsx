@@ -28,14 +28,14 @@ const experience = {
   description: "Professional Experience",
   items: [
     {
-      company: "Capital One",
-      position: "Software Engineer",
-      duration: "2024 - Now",
+      company: "Wedigma One",
+      position: "Software Developer",
+      duration: "2023 - 2024",
       details2: [
         {
-          jobTitle: "Software Engineer",
+          jobTitle: "Software Developer",
           description: [
-            "Created a Java Spring Boot application, designed as a Portability as a Service, whose main objective was to retrieve a COBOL object from the database, create an extracted JSON payload, and execute Trigger in the MySQl database",
+            "Created a Java Spring Boot application with React Front end and Node JS APIs, designed as a Portability as a Service, whose main objective was to retrieve a COBOL object from the database, create an extracted JSON payload, and execute Trigger in the MySQl database",
           ],
         },
       ],
