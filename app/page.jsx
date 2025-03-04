@@ -17,9 +17,9 @@ const Home = () => {
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
               I am a Senior Software Engineer with expertise in full stack
-              development and cloud migrations, specializing in Java, Python, JS
-              frameworks and SQL. I excel in creating high-performance systems
-              and solving complex data challenges.
+              development and cloud migrations, specializing in Java, JS
+              frameworks (Express & React) and SQL. I excel in creating
+              high-performance systems and solving complex data challenges.
             </p>
             {/**Buttons and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
