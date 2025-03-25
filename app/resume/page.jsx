@@ -55,7 +55,7 @@ const experience = {
       ],
     },
     {
-      company: "Defence R&D Org (India)",
+      company: "DRDO (India)",
       position: "Devloper",
       duration: "2017 - 2018",
       details: "",
