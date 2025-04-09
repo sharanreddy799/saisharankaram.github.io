@@ -30,7 +30,7 @@ const experience = {
     {
       company: "Wedigma",
       position: "Software Developer",
-      duration: "2023 - 2024",
+      duration: "2022 - 2024",
       details2: [
         {
           jobTitle: "Software Developer",
