@@ -3,17 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
-import { easeIn, motion } from "framer-motion";
 
 const info = [
   { icon: <FaPhoneAlt />, title: "Phone", description: "XXX-372-XX16" },
@@ -25,7 +15,7 @@ const info = [
   {
     icon: <FaMapMarkedAlt />,
     title: "Address",
-    description: "Nashville,TN",
+    description: "Bellevue, WA",
   },
 ];
 
@@ -41,10 +31,6 @@ const Contact = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleServiceChange = (value) => {
-    setFormData({ ...formData, service: value });
   };
 
   const handleSubmit = async (e) => {
@@ -124,20 +110,19 @@ const Contact = () => {
                 required
               />
             </div>
-            <Select onValueChange={handleServiceChange}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select a service" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Select a service</SelectLabel>
-                  <SelectItem value="full">Full-Time</SelectItem>
-                  <SelectItem value="part">Part-Time</SelectItem>
-                  <SelectItem value="temp">Contract</SelectItem>
-                  <SelectItem value="others">Others</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <select
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              required
+              className="flex h-[54px] w-full items-center rounded-md border border-white/100 focus:border-accent font-light bg-white/10 px-4 text-base outline-none"
+            >
+              <option value="">Select a service</option>
+              <option value="full">Full-Time</option>
+              <option value="part">Part-Time</option>
+              <option value="temp">Contract</option>
+              <option value="others">Others</option>
+            </select>
             {/**text area*/}
             <Textarea
               className="h-[200px]"

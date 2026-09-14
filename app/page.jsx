@@ -1,7 +1,5 @@
 import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
-import { Button } from "@/components/ui/button";
-import { FiDownload } from "react-icons/fi";
 
 const Home = () => {
   return (
@@ -10,16 +8,17 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/**text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Engineer</span>
+            <span className="text-xl">Software Development Engineer</span>
             <h1 className="h1 mb-6">
               Hello I'm
               <br /> <span className="text-accent">Sai Sharan Karam</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I am a Senior Software Engineer with expertise in full stack
-              development and cloud migrations, specializing in Java, JS
-              frameworks (Express & React) and SQL. I excel in creating
-              high-performance systems and solving complex data challenges.
+              Software Development Engineer. Onsite at a startup as a tactical
+              generalist — Java, service contracts, an ML platform (MLflow:
+              develop, test, train, run, deploy) integrated with data-pipeline
+              infra, and large-scale data-processing pipelines (millions of
+              records).
             </p>
             {/**Buttons and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">

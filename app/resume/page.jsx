@@ -28,42 +28,55 @@ const experience = {
   description: "Professional Experience",
   items: [
     {
-      company: "Wedigma",
+      company: "Auger Inc.",
+      position: "Software Development Engineer",
+      duration: "Jan 2026 – Aug 2026",
+      details2: [
+        {
+          jobTitle: "Bellevue, WA · Onsite · Startup",
+          description: [
+            "Java services and APIs, including defining service contracts.",
+            "An ML platform (MLflow) for scientists to develop, test, train, run, and deploy models — separate from the data platform.",
+            "Integrated that ML platform into the data-pipeline infrastructure.",
+            "Data-processing pipelines over millions of records.",
+            "Tactical generalist across the rest of the platform as a startup SDE.",
+          ],
+        },
+      ],
+    },
+    {
+      company: "Quadrant",
       position: "Software Developer",
-      duration: "2022 - 2024",
+      duration: "May 2025 – Jan 2026",
+      details2: [
+        {
+          jobTitle: "Software Developer",
+          description: ["Client: Auger"],
+        },
+      ],
+    },
+    {
+      company: "Infor",
+      position: "Software Engineer",
+      duration: "Jul 2019 – Aug 2022",
+      details2: [
+        {
+          jobTitle: "Software Engineer",
+          description: [
+            "I led the development of critical microservices using Core Java and Spring Boot for the Infor ION OneView platform, which enhanced business process visibility and monitoring. My role involved architecting and optimizing a multi-threaded microservices architecture, leading to a 25% increase in system uptime and a 20% reduction in response times. I successfully integrated complex messaging solutions with RabbitMQ and Google Pub/Sub, increasing throughput by 30%, and played a key role in refining Agile processes, which boosted feature delivery timelines by 20%. Additionally, I mentored junior developers and enhanced the CI/CD pipeline using Jenkins and Git, streamlining deployment processes and ensuring reliable releases.",
+          ],
+        },
+      ],
+    },
+    {
+      company: "Wedigma",
+      position: "Software Developer (freelance)",
+      duration: "2022 – 2024",
       details2: [
         {
           jobTitle: "Software Developer",
           description: [
             "Created a Java Spring Boot application with React Front end and Node JS APIs, designed as a Portability as a Service, whose main objective was to retrieve a COBOL object from the database, create an extracted JSON payload, and execute Trigger in the MySQl database",
-          ],
-        },
-      ],
-    },
-    {
-      company: "Infor Pvt",
-      position: "Software Engineer",
-      duration: "2019 - 2022",
-      details: "",
-      details2: [
-        {
-          jobTitle: "Software Engineer",
-          description: [
-            " I led the development of critical microservices using Core Java and Spring Boot for the Infor ION OneView platform, which enhanced business process visibility and monitoring. My role involved architecting and optimizing a multi-threaded microservices architecture, leading to a 25% increase in system uptime and a 20% reduction in response times. I successfully integrated complex messaging solutions with RabbitMQ and Google Pub/Sub, increasing throughput by 30%, and played a key role in refining Agile processes, which boosted feature delivery timelines by 20%. Additionally, I mentored junior developers and enhanced the CI/CD pipeline using Jenkins and Git, streamlining deployment processes and ensuring reliable releases.",
-          ],
-        },
-      ],
-    },
-    {
-      company: "DRDO (India)",
-      position: "Devloper",
-      duration: "2017 - 2018",
-      details: "",
-      details2: [
-        {
-          jobTitle: "Intern",
-          description: [
-            "Developed a Java-based data transmission application for secure military communications, focusing on optimizing networking and data streams to enhance data transmission speeds by 20%.Managed comprehensive network device monitoring by automating the listing and storage of thousands of devices in an IP network, reducing manual processing time by 50% and improving overall network management efficiency.",
           ],
         },
       ],
@@ -76,20 +89,20 @@ const education = {
   description: "",
   items: [
     {
-      institution: "Troy University",
-      degree: "Master's Degree",
-      concentration: "(Network and Internet Security)",
-      duration: "Aug'22 - May'24",
+      institution: "Troy University, Troy, AL",
+      degree: "Master of Computer Science",
+      concentration: "(Network and Information Security)",
+      duration: "Aug 2022 – May 2024",
       Majors:
-        "ADV ARTIFICIAL INTELLIGENCE, ANALYSIS OF ALGORITHMS, ADVANCED COMPUTER NETWORK,  ADVANCED DATABASE CONCEPTS",
+        "Distributed Systems, Machine Learning, Adv Computer Networks, Systems Design",
     },
     {
-      institution: "Osmania University",
-      degree: "Bachelor's Degree",
-      concentration: "(Computer and Information Science)",
-      duration: "Aug'15 - May'19",
+      institution: "Vasavi College of Engineering (Osmania University)",
+      degree: "Bachelor of Engineering",
+      concentration: "(Computer Science)",
+      duration: "Aug 2015 – May 2019",
       Majors:
-        "DATA STRUCTURES AND ALGORITHMS, WEB TECHNOLOGIES, CLOUD COMPUTING, DISTRIBUTED SYSTREMS",
+        "AI, Image Processing, Data Structures, Cloud Computing, Distributed Systems, OOPS, DBMS",
     },
   ],
 };
@@ -112,73 +125,20 @@ const skills = {
   title: "My Skills",
   items: [
     {
-      title: "Programming Languages: ",
-      list: "Java 8&11, J2EE, Python, SQL, Gherkin, BASH, JavaScript, C++, C, ",
+      title: "Programming Languages & Cloud: ",
+      list: "Java, C, C++, Python, SQL, JavaScript, TypeScript, Scala, AWS, Azure, Terraform, Azure Machine Learning, Spark, PySpark, Microsoft Fabric, OneLake, Delta Lake, Iceberg, Snowflake, Kafka, CI/CD",
     },
     {
       title: "Full Stack Development: ",
-      list: "React.js, Redux, Next.js, Angular, NodeJS, Flask, Spring Boot, Microservices, GraphQL, RESTful APIs, HTML, CSS, TailwindCSS, Bootstrap, JQuery, XML, JSON, Linux, Docker, TensorFlow, CNN",
+      list: "APIs, REST, Spring Boot, Microservices, Flask, Next.js, React.js, Angular, HTML, CSS, Postgres, PostgreSQL, MySQL, MongoDB, Cosmos DB, Kubernetes, Docker, ElasticSearch, TailwindCSS",
     },
     {
       title: "Problem Solving: ",
-      list: "Object-Oriented Programming (OOP), Test Driven Development (TDD), Behavior Driven Development (BDD), Data Structures, Distributed Systems, Design Patterns, SOLID Principles, Performance Tuning",
+      list: "Object-Oriented Programming (OOP), Test Driven Development (TDD), Data Structures, Distributed Systems",
     },
     {
-      title: "Cloud & DevOps: ",
-      list: "AWS (EC2, S3, SQS, Lambda, IAM, RDS), Google Cloud Platform, Microsoft Azure (Service Bus, Blob Storage, CLI), Jenkins, Vercel, GitHub Actions, Gradle, Maven",
-    },
-    {
-      title: "System Architecture: ",
-      list: "Event-Driven Architecture, Service Oriented Architecture (SOA), Message Queues (Kafka, ActiveMQ), RabbitMQ",
-    },
-    {
-      title: "Security & Testing: ",
-      list: "OAuth, Selenium, JUnit, Karate, Cucumber, Postman",
-    },
-    {
-      title: "Databases: ",
-      list: "MySQL, Oracle, PostgreSQL, PL/SQL, MongoDB (NoSQL), Elasticsearch, Apache Kafka",
-    },
-    {
-      title: "Development Tools: ",
-      list: "SVN, Git, VSCode, IntelliJ, Eclipse, Jira, Confluence",
-    },
-    {
-      title: "Other Skills: ",
-      list: "Organizational skills, attention to detail, Agile, multi-tasking, effective prioritization, Linux Server",
-    },
-  ],
-};
-const skills2 = {
-  title: "My Skills",
-  items: [
-    {
-      title: "Languages: ",
-      list: "Java 8&11, J2EE Python, SQL, JavaScript, C++",
-    },
-    {
-      title: "Frameworks: ",
-      list: "Spring Boot, REST, Microservices, RabbitMQ, JUnit, Groovy, ReactJS, TailwindCSS, Angular, Next.js, NodeJS, Linux, Docker, TensorFlow, CNN",
-    },
-    {
-      title: "WebTechnologies: ",
-      list: "Angular, ReactJs, NextJS, JQuery, CSS, HTML5, XML, JSON",
-    },
-    {
-      title: "Databases: ",
-      list: "MySQL, Oracle, PostgreSQL, PL/SQL, Apache Kafka, Elasticsearch",
-    },
-    {
-      title: "Cloudplatforms: ",
-      list: "AWS (EC2, S3, SQS, RDS), Google Cloud Platform, Microsoft Azure (Service Bus, ClI)",
-    },
-    {
-      title: "DevelopmentTools: ",
-      list: "SVN, Git, Jenkins, Gradle, Maven, Postman, Jira, Confluence, VSCode, IntelliJ, Eclipse",
-    },
-    {
-      title: "OtherSkills: ",
-      list: " Event-driven architecture, Service Oriented Architecture, Linux Server, Performance Tuning, organizational skills, attention to detail, Agile, multi-tasking, effective prioritization",
+      title: "Tools & Methodologies: ",
+      list: "OAuth, OIDC, IAM, OpenAPI, Hibernate, SLF4J, SDLC, Swagger, Agile, Git, Unix/Linux, Azure DevOps, YAML, Gradle, Maven, Azure Artifacts, MLflow, MLOps, Datadog, API Gateway, Temporal, SFTP, Jenkins, Vercel, Cursor, Codex, Claude",
     },
   ],
 };
@@ -224,33 +184,31 @@ const Resume = () => {
           {/* <TabsTrigger value="about">About Me</TabsTrigger> */}
         </TabsList>
         {/**content */}
-        <div className=" w-full xl:h-[300px] lg:h-[300px]">
+        <div className="w-full min-w-0">
           {/**experience */}
           <TabsContent value="experience" className="w-full ">
-            <div className="flex flex-col  gap-[10px] text-center xl:h-[400px] xl:text-left xl:w-[35rem]">
+            <div className="flex flex-col gap-[10px] text-center xl:text-left w-full">
               <h3 className="text-4xl font-bold">{experience.title}</h3>
               <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                 {experience.description}
               </p>
-              <ul className="flex flex-col lg:grid-cols-2 gap-[10px]">
+              <ul className="flex flex-col gap-[10px] w-full">
                 {experience.items.map((item, index) => {
                   return (
                     <li
                       key={index}
-                      className="bg-[#232329] h-[120px] xl:h-[60px] w-110 py-4 px-10 rounded-xl flex flex-col xl:flex-row justify-center items-center xl:gap-8 lg:items-start gap-1 hover:bg-accent-hover/10 cursor-pointer"
+                      className="bg-[#232329] py-4 px-6 rounded-xl flex flex-col xl:grid xl:grid-cols-[auto_1fr_auto] xl:items-center gap-2 hover:bg-accent-hover/10 cursor-pointer"
                       onClick={() => setSelectedExperience(index)}
                     >
-                      {/* class="bg-[#232329] h-[200px] xl:h-[80px] w-110 py-4 px-10 rounded-xl flex flex-col xl:flex-row justify-center items-center gap-1 xl:hover:bg-accent-hover/10 cursor-pointer">
-                       */}{" "}
-                      {/**onClick={() => setSelectedExperience(index)}*/}
-                      <span className="text-accent">{item.duration}</span>
-                      <h3 className="text-xl max-w-[260px] min-h-[30px] text-center lg:text-left">
+                      <span className="text-accent xl:whitespace-nowrap">
+                        {item.duration}
+                      </span>
+                      <h3 className="text-xl leading-tight text-center xl:text-left">
                         {item.position}
                       </h3>
-                      <div className="flex items-center gap-1">
-                        {/* <span className="w-[6px] h-[6px] rounded-full bg-accent"></span> */}
-                        <p className="text-white/60">{item.company}</p>
-                      </div>
+                      <p className="text-white/60 xl:whitespace-nowrap xl:text-right">
+                        {item.company}
+                      </p>
                     </li>
                   );
                 })}
@@ -274,7 +232,7 @@ const Resume = () => {
                         onClick={() => setSeletedEducation(index)}
                       >
                         <span className="text-accent">{item.duration}</span>
-                        <h3 className="text-xl max-w-[260px] min-h-[30px] text-center lg:text-left">
+                        <h3 className="text-xl leading-tight max-w-full text-center lg:text-left">
                           {item.degree}
                         </h3>
                         <div className="flex items-center gap-3">
