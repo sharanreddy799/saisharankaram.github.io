@@ -14,11 +14,11 @@ const Home = () => {
               <br /> <span className="text-accent">Sai Sharan Karam</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              Software Development Engineer. Onsite at a startup as a tactical
-              generalist — Java, service contracts, an ML platform (MLflow:
-              develop, test, train, run, deploy) integrated with data-pipeline
-              infra, and large-scale data-processing pipelines (millions of
-              records).
+              Onsite at a startup, I work as a tactical generalist: Java
+              services and API contracts; an ML platform on MLflow so scientists
+              can develop, test, train, run, and deploy models; and
+              data-processing pipelines that handle millions of records. I
+              integrate that ML platform with the pipeline infrastructure.
             </p>
             {/**Buttons and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">

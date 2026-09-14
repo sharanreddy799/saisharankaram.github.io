@@ -4,23 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 import { TabsContent, Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
-//About me
-const about = {
-  title: "About me",
-  description: "",
-  info: [
-    { fieldName: "Name", fieldValue: "SaiSharan Karam" },
-    { fieldName: "Phone", fieldValue: "+1(334)-372-0616" },
-    { fieldName: "Experience", fieldValue: "4+ years" },
-    { fieldName: "Nationality", fieldValue: "Indian" },
-
-    { fieldName: "Freelance", fieldValue: "Available" },
-    { fieldName: "Languages", fieldValue: "English, Hindi, Telugu" },
-    { fieldName: "Email", fieldValue: "saisharank2008@gmail.com" },
-  ],
-};
 //experience data
 const experience = {
   icon: "",
@@ -126,11 +110,11 @@ const skills = {
   items: [
     {
       title: "Programming Languages & Cloud: ",
-      list: "Java, C, C++, Python, SQL, JavaScript, TypeScript, Scala, AWS, Azure, Terraform, Azure Machine Learning, Spark, PySpark, Microsoft Fabric, OneLake, Delta Lake, Iceberg, Snowflake, Kafka, CI/CD",
+      list: "Java, C, C++, Python, SQL, JavaScript, TypeScript, Scala, AWS, Azure, Terraform, Azure Machine Learning, Spark, PySpark, Microsoft Fabric, OneLake, Delta Lake, Iceberg, Snowflake, Kafka, Cosmos DB, CI/CD",
     },
     {
       title: "Full Stack Development: ",
-      list: "APIs, REST, Spring Boot, Microservices, Flask, Next.js, React.js, Angular, HTML, CSS, Postgres, PostgreSQL, MySQL, MongoDB, Cosmos DB, Kubernetes, Docker, ElasticSearch, TailwindCSS",
+      list: "APIs, REST, Spring Boot, Microservices, Microservices architecture, Flask, Next.js, React.js, Angular, HTML, CSS, Postgres, PostgreSQL, MySQL, MongoDB, Cosmos DB, Kubernetes, Docker, ElasticSearch, TailwindCSS, API Gateway",
     },
     {
       title: "Problem Solving: ",
@@ -138,7 +122,7 @@ const skills = {
     },
     {
       title: "Tools & Methodologies: ",
-      list: "OAuth, OIDC, IAM, OpenAPI, Hibernate, SLF4J, SDLC, Swagger, Agile, Git, Unix/Linux, Azure DevOps, YAML, Gradle, Maven, Azure Artifacts, MLflow, MLOps, Datadog, API Gateway, Temporal, SFTP, Jenkins, Vercel, Cursor, Codex, Claude",
+      list: "OAuth, OIDC, AuthN, AuthZ, Microsoft Entra ID, Entra App, IAM, OpenAPI, Hibernate, SLF4J, SDLC, Swagger, Agile, Git, Unix/Linux, Azure DevOps, YAML, Gradle, Maven, Azure Artifacts, MLflow, MLOps, Datadog, API Gateway, Temporal, SFTP, Jenkins, Vercel, Cursor, Claude, Codex, Agents, LLM",
     },
   ],
 };
@@ -170,213 +154,152 @@ const Resume = () => {
     //   }}
     //   className="xl:mt-[5%] flex flex-col items-center  justify-center py-12 xl:pb-64px"
     // >
-    <div className="container mx-auto ">
+    <div className="container mx-auto pb-10">
       <Tabs
         defaultValue="experience"
-        className="flex flex-col xl:flex-row gap-[60px]"
+        className="flex flex-col gap-8"
         onValueChange={handleTabchange}
       >
-        <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+        <TabsList className="grid grid-cols-2 xl:grid-cols-4 gap-3 w-full max-w-none">
           <TabsTrigger value="experience">Experience</TabsTrigger>
           <TabsTrigger value="education">Education</TabsTrigger>
           <TabsTrigger value="publication">Publication</TabsTrigger>
           <TabsTrigger value="skills">Skills</TabsTrigger>
-          {/* <TabsTrigger value="about">About Me</TabsTrigger> */}
         </TabsList>
-        {/**content */}
-        <div className="w-full min-w-0">
-          {/**experience */}
-          <TabsContent value="experience" className="w-full ">
-            <div className="flex flex-col gap-[10px] text-center xl:text-left w-full">
-              <h3 className="text-4xl font-bold">{experience.title}</h3>
-              <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                {experience.description}
-              </p>
-              <ul className="flex flex-col gap-[10px] w-full">
-                {experience.items.map((item, index) => {
-                  return (
-                    <li
-                      key={index}
-                      className="bg-[#232329] py-4 px-6 rounded-xl flex flex-col xl:grid xl:grid-cols-[auto_1fr_auto] xl:items-center gap-2 hover:bg-accent-hover/10 cursor-pointer"
-                      onClick={() => setSelectedExperience(index)}
-                    >
-                      <span className="text-accent xl:whitespace-nowrap">
-                        {item.duration}
-                      </span>
-                      <h3 className="text-xl leading-tight text-center xl:text-left">
-                        {item.position}
-                      </h3>
-                      <p className="text-white/60 xl:whitespace-nowrap xl:text-right">
-                        {item.company}
-                      </p>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </TabsContent>
-          {/**education */}
-          <TabsContent value="education" className="w-full">
-            <div className="flex flex-col  gap-[30px] text-center xl:text-left xl:w-[35rem]">
-              <h3 className="text-4xl font-bold">{education.title}</h3>
-              <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                {education.description}
-              </p>
-              <ScrollArea className="h-[500px]">
-                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                  {education.items.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="bg-[#232329] h-full py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1  hover:bg-accent-hover/10 cursor-pointer"
-                        onClick={() => setSeletedEducation(index)}
-                      >
-                        <span className="text-accent">{item.duration}</span>
-                        <h3 className="text-xl leading-tight max-w-full text-center lg:text-left">
-                          {item.degree}
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                          <p className="text-white/60">{item.institution}</p>
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </ScrollArea>
-            </div>
-          </TabsContent>
-          {/**publication */}
-          <TabsContent value="publication" className="w-full">
-            <div className="flex flex-col  gap-[30px] text-center xl:text-left xl:w-[35rem]">
-              <h3 className="text-4xl font-bold">{publication.title}</h3>
-              <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                {publication.description}
-              </p>
 
-              <ul className="grid grid-cols-1  gap-[30px] ">
-                {publication.items.map((item, index) => {
-                  return (
-                    <li
-                      key={index}
-                      className="bg-[#232329] h-[250px] w-110 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                    >
-                      <span className="text-accent">{item.published_date}</span>
+        <TabsContent value="experience" className="w-full min-h-0">
+          <div className="flex flex-col gap-6">
+            <h3 className="text-4xl font-bold text-center xl:text-left">
+              {experience.title}
+            </h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {experience.items.map((item, index) => (
+                <li
+                  key={index}
+                  className={`bg-[#232329] py-5 px-6 rounded-xl flex flex-col gap-1 cursor-pointer hover:bg-accent-hover/10 ${
+                    selectedExperience === index ? "ring-2 ring-accent" : ""
+                  }`}
+                  onClick={() => setSelectedExperience(index)}
+                >
+                  <span className="text-accent text-sm">{item.duration}</span>
+                  <h3 className="text-xl leading-tight">{item.position}</h3>
+                  <p className="text-white/60">{item.company}</p>
+                </li>
+              ))}
+            </ul>
+            {selectedExperience !== null && (
+              <div
+                ref={sectionRef}
+                className="flex flex-col gap-3 bg-[#232329] rounded-xl py-5 px-6"
+              >
+                {experience.items[selectedExperience].details2.map(
+                  (detail, index) => (
+                    <div key={index} className="flex flex-col gap-2">
+                      <p className="text-accent">{detail.jobTitle}</p>
+                      {detail.description.map((desc, descIndex) => (
+                        <p
+                          key={descIndex}
+                          className="text-white/80 leading-snug border-b border-white/10 pb-2"
+                        >
+                          {desc}
+                        </p>
+                      ))}
+                    </div>
+                  )
+                )}
+              </div>
+            )}
+          </div>
+        </TabsContent>
 
-                      <h3 className="text-xl  min-h-[60px] text-center lg:text-left">
-                        {item.name}
-                      </h3>
-                      <div className="flex items-center gap-3">
-                        <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                        <p className="text-white/60">{item.publication_name}</p>
-
-                        <Link href={item.link} className="text-blue-700">
-                          link
-                        </Link>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </TabsContent>
-          {/**skills */}
-          <TabsContent
-            value="skills"
-            className="w-full text-center xl:text-left"
-          >
-            <div className="flex pb-3 flex-col gap-[10px] xl:w-[35rem]">
-              <h3 className="text-4xl font-bold">{skills.title}</h3>
-              <p className="max-w-[600px] text-white/60 mx-auto mt-0 xl:mx-8">
-                {about.description}
-              </p>
-              <ScrollArea className="h-[400px]]">
-                <ul className=" flex flex-col gap-3 max-w-[620px] mx-auto xl:mx-0">
-                  {skills.items.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="bg-[#232329] w-110 py-2 px-5 rounded-xl flex-col justify-center items-center lg:items-start gap-4"
-                      >
-                        {" "}
-                        <span className="text-white/60">{item.title}</span>
-                        <span className="text-sm">{item.list}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </ScrollArea>
-            </div>
-          </TabsContent>
-          {/**About me*/}
-          <TabsContent
-            value="about"
-            className="w-full text-center xl:text-left"
-          >
-            <div className="flex flex-col gap-[30px] xl:w-[35rem]">
-              <h3 className="text-4xl font-bold">{about.title}</h3>
-              <p className="max-w-[600px] text-white/60 mx-auto xl:mx-8">
-                {about.description}
-              </p>
-              <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
-                {about.info.map((item, index) => {
-                  return (
-                    <li
-                      key={index}
-                      className="flex items-center justify-center xl:justify-start gap-4"
+        <TabsContent value="education" className="w-full min-h-0">
+          <div className="flex flex-col gap-6">
+            <h3 className="text-4xl font-bold text-center xl:text-left">
+              {education.title}
+            </h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {education.items.map((item, index) => (
+                <li
+                  key={index}
+                  className={`bg-[#232329] py-5 px-6 rounded-xl flex flex-col gap-1 cursor-pointer hover:bg-accent-hover/10 ${
+                    selectedEducation === index ? "ring-2 ring-accent" : ""
+                  }`}
+                  onClick={() => setSeletedEducation(index)}
+                >
+                  <span className="text-accent text-sm">{item.duration}</span>
+                  <h3 className="text-xl leading-tight">{item.degree}</h3>
+                  <p className="text-white/60">{item.institution}</p>
+                </li>
+              ))}
+            </ul>
+            {selectedEducation !== null && (
+              <div
+                ref={sectionRef}
+                className="flex flex-col gap-2 bg-[#232329] rounded-xl py-5 px-6"
+              >
+                <p className="text-accent">
+                  {education.items[selectedEducation].degree}{" "}
+                  {education.items[selectedEducation].concentration}
+                </p>
+                {education.items[selectedEducation].Majors.split(",").map(
+                  (line, i) => (
+                    <p
+                      key={i}
+                      className="text-white/80 leading-snug border-b border-white/10 pb-2"
                     >
-                      <span className="text-white/60">{item.fieldName}</span>
-                      <span className="text-xl">{item.fieldValue}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </TabsContent>
-        </div>
-      </Tabs>
-      <div className="w-full mb-[25px] mt-6 ">
-        {selectedExperience !== null && (
-          <div
-            ref={sectionRef}
-            className="mt-3 p-4 bg-[#232329] rounded-xl items-center justify-center"
-          >
-            <h4 className="text-2xl font-bold">
-              {experience.items[selectedExperience].company}
-            </h4>
-            <ul className="text-white/60 mt-2 list-disc pl-5">
-              {experience.items[selectedExperience].details2.map(
-                (detail, index) => (
-                  <li key={index}>
-                    <p className="text-accent">{detail.jobTitle}</p>
-                    {detail.description.map((desc, descIndex) => (
-                      <p key={descIndex}>
-                        <span className="w-2 h-2 rounded-full bg-accent flex-shrink-0"></span>
-                        {desc}
-                      </p>
-                    ))}
-                  </li>
-                )
-              )}
+                      {line.trim()}
+                    </p>
+                  )
+                )}
+              </div>
+            )}
+          </div>
+        </TabsContent>
+
+        <TabsContent value="publication" className="w-full min-h-0">
+          <div className="flex flex-col gap-6">
+            <h3 className="text-4xl font-bold text-center xl:text-left">
+              {publication.title}
+            </h3>
+            <ul className="grid grid-cols-1 gap-4">
+              {publication.items.map((item, index) => (
+                <li
+                  key={index}
+                  className="bg-[#232329] py-6 px-6 rounded-xl flex flex-col gap-2"
+                >
+                  <span className="text-accent text-sm">
+                    {item.published_date}
+                  </span>
+                  <h3 className="text-xl leading-tight">{item.name}</h3>
+                  <p className="text-white/60">{item.publication_name}</p>
+                  <Link href={item.link} className="text-accent underline">
+                    link
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-        )}
-        {selectedEducation !== null && (
-          <div
-            ref={sectionRef}
-            className="mt-1 p-4 bg-[#232329]  rounded-xl items-center justify-center  "
-          >
-            <h4 className="text-2xl font-bold">
-              {education.items[selectedEducation].degree} in{" "}
-              {education.items[selectedEducation].concentration} at{" "}
-              {education.items[selectedEducation].institution}
-            </h4>
-            <p className="text-white/60 mt-2">
-              {education.items[selectedEducation].Majors}
-            </p>
+        </TabsContent>
+
+        <TabsContent value="skills" className="w-full min-h-0">
+          <div className="flex flex-col gap-4">
+            <h3 className="text-4xl font-bold text-center xl:text-left">
+              {skills.title}
+            </h3>
+            <ul className="flex flex-col gap-3">
+              {skills.items.map((item, index) => (
+                <li
+                  key={index}
+                  className="bg-[#232329] py-3 px-5 rounded-xl flex flex-col gap-1"
+                >
+                  <span className="text-white/60">{item.title}</span>
+                  <span className="text-sm leading-relaxed">{item.list}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        )}
-      </div>
+        </TabsContent>
+      </Tabs>
     </div>
     //</motion.div>
   );
